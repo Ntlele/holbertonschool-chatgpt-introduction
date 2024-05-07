@@ -20,9 +20,10 @@ def check_winner(board):
 
     return False
 
+
 def tic_tac_toe():
     board = [[" "]*3 for _ in range(3)]
-    player = "X"
+    player = "O"  # Change initial player to "O"
     while not check_winner(board):
         print_board(board)
         try:
@@ -43,6 +44,13 @@ def tic_tac_toe():
             print("Invalid input! Please enter integers for row and column.")
 
     print_board(board)
-    print("Player " + player + " wins!")
+    if check_winner(board):
+        if player == "X":
+            winner = "O"
+        else:
+            winner = "X"
+        print("Player " + winner + " wins!")
+    else:
+        print("It's a tie!")
 
 tic_tac_toe()
