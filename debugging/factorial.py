@@ -7,7 +7,7 @@ def factorial(n):
     while n > 1:
         result *= n
         n -= 1
-        return result
+    return result
 
 if len(sys.argv) != 2:
     print("Please enter an integer")
